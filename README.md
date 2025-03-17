@@ -2,7 +2,7 @@
 
 ## 0. Setting
 
-- `.gitignore` : 필요없는 파일 처리
+- `.gitignore` : 필요없는 파일 처리(python, windows, macOS, django)
 - `python -m venv venv` : 가상환경 설정
     - `source venv/Script/activate` : 가상환경 활성화
 - `README.md` : 작성 습관화 하기
