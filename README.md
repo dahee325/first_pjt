@@ -6,6 +6,8 @@
 - `python -m venv venv` : 가상환경 설정
     - `source venv/Script/activate` : 가상환경 활성화
 - `README.md` : 작성 습관화 하기
+- `pip install faker` : faker 라이브러리 설치 
+    - [faker](https://pypi.org/project/Faker/)
 
 ## 1. Django 프로젝트
 1. Django 설치
@@ -95,3 +97,24 @@ def index(request):
     - `views.py`파일 안의 함수 안에 `context={키:값,}`만들고 `return render()`에 인자로 `context`추가
     - `.html`파일의 <body>안에 {{딕셔너리 키값}}을 포함하는 태그 작성
     - {{context의 키}} : django안의 render()가 만들어주는 함수
+
+- 경로설정 변수화(variable routing)
+    - `urls.py` 파일에 `path('profile/<username>/', views.profile)`
+        - 숫자를 받는 경우 : `<int:number>` => `views.py`에서 int(number)로 선언해줄 수 있지만 문자를 넣었을 떄 다른 오류가 생김
+    - `views.py` 파일에 함수를 선언할 때 username을 인자로 설정 : `def profile(request, username):`
+
+- html파일에서 python 코드 쓰기
+```html
+<body>
+    {%for a in b%}
+        <p> {{a}} </p>
+    {% endfor %} <!-- for문을 끝냄 -->
+</body>
+```
+    - html파일에 주석에 {%%}을 포함하면면 주석처리된 것처럼 보이지만 django는 읽으려고 시도함
+    - django에서 주석다는 방법
+```django
+{%comment%}
+
+{%endcomment%}
+```

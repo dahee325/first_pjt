@@ -24,5 +24,10 @@ urlpatterns = [
     path('index/', views.index),
     path('hello/', views.hello),
     path('lunch/', views.lunch),
-    path('lotto/', views.lotto)
+    path('lotto/', views.lotto),
+    # variable routing
+    path('profile/<username>/', views.profile),
+    path('cube/<int:number>/', views.cube),
+    
+    path('articles/', views.articles),
 ]
