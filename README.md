@@ -64,7 +64,7 @@ INSTALLED_APPS = [
 
 - 경로설정 (`urls.py`)
 ```python
-`from first_app import view` : first_app 폴더 내부의 view.py 파일 가져오기
+`from first_app import views` : first_app 폴더 내부의 view.py 파일 가져오기
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
