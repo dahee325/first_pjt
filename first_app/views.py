@@ -65,3 +65,23 @@ def articles(request):
     }
 
     return render(request, 'articles.html', context)
+
+def ping(request):
+    return render(request, 'ping.html')
+
+# ping/에 데이터를 입력하고 제출하면 pong/으로 이동하면서 에러 뜸
+# => 에러 밑에 request information : request변수가 갖고있는 정보들
+# => request.GET : ping/에서 입력한 데이터, 딕셔너리
+def pong(request): 
+    # print(request.GET['title'])
+    # print(request.GET['content']) # 값이 없을 때 키에러가 발생할 수도 있음
+
+    title = request.GET.get('title')
+    content = request.GET.get('content') # 없는 키를 찾거나 값을 입력하지 않으면 None반환
+
+    context = {
+        'title': title,
+        'content': content,
+    }
+
+    return render(request, 'pong.html', context)

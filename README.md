@@ -118,3 +118,14 @@ def index(request):
 
 {%endcomment%}
 ```
+
+- `ping/` : 데이터를 입력받을 종이 보여주기
+```html
+<body>
+    <form action="/pong/">
+        <input type="" name="">
+        <input type="" name="">
+    </form>
+</body>
+```
+- `pong/` : `ping/`에서 입력받은 데이터를 가져와서 보여주기

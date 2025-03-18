@@ -30,4 +30,7 @@ urlpatterns = [
     path('cube/<int:number>/', views.cube),
     
     path('articles/', views.articles),
+
+    path('ping/', views.ping), # 빈 종이를 보여주는 것
+    path('pong/', views.pong), # 종이 안의 데이터를 가져오는 것
 ]
